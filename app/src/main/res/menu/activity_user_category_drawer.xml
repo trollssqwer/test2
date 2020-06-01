@@ -7,19 +7,19 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Tài khoản của tôi" />
+            android:title="Trang chủ" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Lịch sử mua hàng" />
+            android:title="Giỏ hàng" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Thông báo" />
+            android:title="Lịch sử mua hàng" />
         <item
             android:id="@+id/nav_tools"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Trạng thái đơn hàng" />
+            android:title="Tài khoản của tôi" />
     </group>
 
     <item android:title="Share">
