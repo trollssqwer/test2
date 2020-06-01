@@ -15,6 +15,7 @@ public class ProductItem extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //test brach
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
         ProductImage = (ImageView) findViewById(R.id.product_image);
