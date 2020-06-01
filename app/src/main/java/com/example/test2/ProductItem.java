@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -19,6 +20,7 @@ import java.util.ListIterator;
 public class ProductItem extends AppCompatActivity {
     private TextView ProductNamex , ProductPrice ,ProductDescrption;
     private ImageView ProductImage;
+    private TextView product_name;
     List<mathang> list = new List<mathang>() {
         @Override
         public int size() {
@@ -151,7 +153,7 @@ public class ProductItem extends AppCompatActivity {
         ProductNamex = (TextView) findViewById(R.id.product_name);
         ProductPrice = (TextView) findViewById(R.id.product_price);
         ProductDescrption = (TextView) findViewById(R.id.product_description);
-
+        product_name=(TextView) findViewById(R.id.product_name);
         ProductImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -160,6 +162,13 @@ public class ProductItem extends AppCompatActivity {
             }
         });
         ProductNamex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductItem.this,Cart.class);
+                startActivity(intent);
+            }
+        });
+        product_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProductItem.this,Cart.class);
