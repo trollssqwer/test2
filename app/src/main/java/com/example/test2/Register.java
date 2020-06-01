@@ -66,6 +66,7 @@ public class Register extends AppCompatActivity {
             Toast.makeText(Register.this,"Ten dang nhap hoac so dien thoai da ton tai !",Toast.LENGTH_LONG).show();
         }
         else {
+
             Toast.makeText(Register.this,"Ten dang nhap hoac so dien thoai da ton tai !",Toast.LENGTH_LONG).show();
             Intent intent = new Intent(Register.this,MainActivity.class);
             startActivity(intent);
