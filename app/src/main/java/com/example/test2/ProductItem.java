@@ -20,6 +20,9 @@ import java.util.ListIterator;
 public class ProductItem extends AppCompatActivity {
     private TextView ProductNamex , ProductPrice ,ProductDescrption;
     private ImageView ProductImage;
+
+    public List<mathang> listA;
+
     private TextView product_name;
     List<mathang> list = new List<mathang>() {
         @Override
@@ -144,6 +147,7 @@ public class ProductItem extends AppCompatActivity {
         }
     };
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //test brach
@@ -153,7 +157,12 @@ public class ProductItem extends AppCompatActivity {
         ProductNamex = (TextView) findViewById(R.id.product_name);
         ProductPrice = (TextView) findViewById(R.id.product_price);
         ProductDescrption = (TextView) findViewById(R.id.product_description);
+
+ 
+
+
         product_name=(TextView) findViewById(R.id.product_name);
+
         ProductImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -178,7 +187,7 @@ public class ProductItem extends AppCompatActivity {
         mathang a=new mathang(1,"Cốc",10000,"Capuchino");
         mathang b=new mathang(2, "Chai", 1000, "Trà sữa");
 
-        list.add(a);
-        list.add(b);
+        listA.add(a);
+        listA.add(b);
     }
 }
