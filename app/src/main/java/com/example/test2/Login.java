@@ -79,6 +79,7 @@ public class Login extends AppCompatActivity {
     private void ValidateLogin(String username,String password){
         Intent intenta = new Intent(Login.this,UserCategory.class);
         startActivity(intenta);
+
         //Check usename, password
 //        if(username != "a"){
 //            Toast.makeText(Login.this,"Ten dang nhap hoac mat khau sai !",Toast.LENGTH_LONG).show();
