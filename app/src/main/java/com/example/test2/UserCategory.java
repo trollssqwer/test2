@@ -25,6 +25,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class UserCategory extends AppCompatActivity {
+    private TextView ProductNamex , ProductPrice ,ProductDescrption;
+    private ImageView ProductImage;
 
     private AppBarConfiguration mAppBarConfiguration;
     @Override
@@ -46,6 +48,9 @@ public class UserCategory extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+
 
 
 
