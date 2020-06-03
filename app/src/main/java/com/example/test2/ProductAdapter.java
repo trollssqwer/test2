@@ -68,8 +68,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         String id="R.drawble"+String.valueOf(currentProdcut.getId());
 
         holder.imgProduct.setImageResource(R.drawable.mh1);
-        holder.priceProduct.setText(currentProdcut.getTenhang());
-        holder.nameProduct.setText(currentProdcut.getDonvitinh());
+        holder.priceProduct.setText(String.valueOf(currentProdcut.getGia()));
+        holder.nameProduct.setText(currentProdcut.getTenhang());
         holder.desProduct.setText(currentProdcut.getTenhang());
     }
 

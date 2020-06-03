@@ -36,7 +36,6 @@ public class GalleryFragment extends Fragment {
     private RecyclerView CrecyclerView;
     private CartAdapter Cadapter;
     private RecyclerView.LayoutManager ClayoutManager;
-    ArrayList<mathang> ClistHang = new ArrayList<mathang>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,9 +43,7 @@ public class GalleryFragment extends Fragment {
                 ViewModelProviders.of(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
 
-        ClistHang.add(new mathang(1,"a",3,"a"));
-        ClistHang.add(new mathang(2,"b",4,"b"));
-        ClistHang.add(new mathang(3,"c",5,"c"));
+
         CrecyclerView =  root.findViewById(R.id.cart_list);
         CrecyclerView.setHasFixedSize(true);
         ClayoutManager = new LinearLayoutManager(getActivity());
