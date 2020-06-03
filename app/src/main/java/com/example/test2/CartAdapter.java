@@ -64,9 +64,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         mathang currentProdcut = listHang.get(position);
 
         holder.imgProduct.setImageResource(R.drawable.ic_launcher_background);
-        holder.priceProduct.setText(currentProdcut.getTenhang());
-        holder.nameProduct.setText(currentProdcut.getDonvitinh());
-        holder.desProduct.setText(String.valueOf(currentProdcut.getGia()));
+        holder.priceProduct.setText(String.valueOf(currentProdcut.getGia()));
+        holder.nameProduct.setText(currentProdcut.getTenhang());
+        holder.desProduct.setText(String.valueOf(currentProdcut.getId()));
     }
 
     @Override
