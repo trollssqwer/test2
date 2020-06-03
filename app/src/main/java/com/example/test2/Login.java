@@ -77,7 +77,7 @@ public class Login extends AppCompatActivity {
 
     //Check database Login
     private void ValidateLogin(String username,String password){
-        Intent intenta = new Intent(Login.this,UserCategory.class);
+        Intent intenta = new Intent(Login.this,ShopList.class);
         startActivity(intenta);
 
         //Check usename, password
