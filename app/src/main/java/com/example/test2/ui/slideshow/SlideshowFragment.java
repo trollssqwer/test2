@@ -19,12 +19,13 @@ import com.example.test2.model.hoadonAdapter;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class SlideshowFragment extends Fragment {
 
     private SlideshowViewModel slideshowViewModel;
     private ListView lvhoadon;
-    ArrayList<hoadon> arrhoadon;
+    List<hoadon> arrhoadon;
     hoadonAdapter adapter;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class SlideshowFragment extends Fragment {
             }
         });
         lvhoadon =(ListView) root.findViewById(R.id.listviewhoadon);
-        arrhoadon = new ArrayList<>();
+        arrhoadon = new ArrayList<hoadon>();
         adapter = new hoadonAdapter(getActivity(),R.layout.dong_hoa_don,arrhoadon);
         lvhoadon.setAdapter(adapter);
         hoadon h1=new hoadon(1,1,1,100000,10000,new Date(2019,1,1),"Hoàng quốc việt");
