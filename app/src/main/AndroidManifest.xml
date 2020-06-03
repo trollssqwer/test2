@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ProductItem">
-            android:name="ProductItem"
         </activity>
         <activity
             android:name=".UserCategory"
