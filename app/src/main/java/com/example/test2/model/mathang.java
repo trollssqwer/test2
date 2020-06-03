@@ -3,7 +3,8 @@ package com.example.test2.model;
 public class mathang {
     private int id;
     private String donvitinh;
-    private long gia;
+    private double gia;
+    private String tenhang;
 
     public mathang(int id, String donvitinh, long gia, String tenhang) {
         this.id = id;
@@ -11,15 +12,18 @@ public class mathang {
         this.gia = gia;
         this.tenhang = tenhang;
     }
+    public mathang()
+    {
 
-    private String tenhang;
+    }
+
 
 
 
     public String getDonvitinh() { return donvitinh; }
     public void setDonvitinh(String value) { this.donvitinh = value; }
-    public long getGia() { return gia; }
-    public void setGia(long value) { this.gia = value; }
+    public double getGia() { return gia; }
+    public void setGia(double value) { this.gia = value; }
     public String getTenhang() { return tenhang; }
     public void setTenhang(String value) { this.tenhang = value; }
 

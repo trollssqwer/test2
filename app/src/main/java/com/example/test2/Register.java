@@ -4,12 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class Register extends AppCompatActivity {
     private Button CreateAccountButton;
@@ -25,6 +35,7 @@ public class Register extends AppCompatActivity {
         PhoneNumberEditText = (EditText) findViewById(R.id.register_numberphone);
         loadingBar = new ProgressDialog(this);
         //Create Account
+        new getURL().execute("http://35.198.237.116/coffeshop/api/mathangs");
         CreateAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +83,37 @@ public class Register extends AppCompatActivity {
             startActivity(intent);
         }
     }
+    class getURL extends AsyncTask<String,Void,String>
+    {
+        OkHttpClient client=new OkHttpClient.Builder().connectTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15,TimeUnit.SECONDS)
+                .readTimeout(15,TimeUnit.SECONDS)
+                .retryOnConnectionFailure(true)
+                .build();
+        @Override
+        protected String doInBackground(String... strings) {
+            Request.Builder builder = new Request.Builder();
+            builder.url(strings[0]);
+            Request request=builder.build();
+            try {
+                Response response= client.newCall(request).execute();
+                return response.body().string();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            if(!s.equals(""))
+            {
+
+            }
+
+            super.onPostExecute(s);
+        }
+    }
 
 }
