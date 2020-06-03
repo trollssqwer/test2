@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.example.test2.model.mathang;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 
-public class InformationProduct extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class InformationProduct extends AppCompatActivity {
+    public static  ArrayList<mathang> listCart = new ArrayList<mathang>();
     private TextView mTextView,productname;
     private Button addToCart;
     private ElegantNumberButton btnCount;
@@ -23,7 +25,6 @@ public class InformationProduct extends AppCompatActivity {
         setContentView(R.layout.activity_information_product);
         Intent intentADD = getIntent();
         String b = intentADD.getStringExtra("idHang");
-
         productname = findViewById(R.id.product_name_details);
         productname.setText(b);
         btnCount = (ElegantNumberButton) findViewById(R.id.number_btn);
@@ -43,9 +44,9 @@ public class InformationProduct extends AppCompatActivity {
         if(1 == 1){
             Toast.makeText(this,"DA THEM VAO GIO HANG",Toast.LENGTH_SHORT).show();
         }
+        int x = Integer.parseInt(btnCount.getNumber());
+        listCart.add(new mathang(1,productname.getText().toString(),x,"s"));
         Intent intentCart = new Intent(InformationProduct.this,UserCategory.class);
-        intentCart.putExtra("tenHang",productname.getText().toString());
-        intentCart.putExtra("count",btnCount.getNumber());
         startActivity(intentCart);
     }
 }
