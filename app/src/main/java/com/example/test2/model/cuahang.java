@@ -13,6 +13,10 @@ public class cuahang {
         this.diachicuahang = diachicuahang;
     }
 
+    public cuahang() {
+
+    }
+
     public int getMacuahang() {
         return macuahang;
     }
