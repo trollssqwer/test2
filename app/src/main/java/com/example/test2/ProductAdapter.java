@@ -1,5 +1,6 @@
 package com.example.test2;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.test2.model.mathang;
 
@@ -63,8 +65,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         mathang currentProdcut = listHang.get(position);
+        String id="R.drawble"+String.valueOf(currentProdcut.getId());
 
-        holder.imgProduct.setImageResource(R.drawable.books);
+        holder.imgProduct.setImageResource(R.drawable.mh1);
         holder.priceProduct.setText(currentProdcut.getTenhang());
         holder.nameProduct.setText(currentProdcut.getDonvitinh());
         holder.desProduct.setText(currentProdcut.getTenhang());

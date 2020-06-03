@@ -30,6 +30,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.example.test2.model.mathang;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -62,33 +63,89 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-
-        listHang.add(new mathang(1,"a",3,"a"));
-        listHang.add(new mathang(2,"b",4,"b"));
-        listHang.add(new mathang(3,"c",5,"c"));
-        txt2=(TextView) root.findViewById(R.id.textView2);
+        listHang =new ArrayList<mathang>();
         recyclerView = root.findViewById(R.id.rv_main);
-        listmh = new ArrayList<mathang>();
-        recyclerView.setHasFixedSize(true);
+        listmh=new ArrayList<>();
+        new getURL().execute("http://35.198.237.116/coffeshop/api/mathangs");
 
-        layoutManager = new LinearLayoutManager(getActivity());
-        adapter = new ProductAdapter(listmh);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
-       // new getURL().execute("http://35.198.237.116/coffeshop/api/mathangs");
-        adapter.setOnPruductClickLisner(new ProductAdapter.OnProductClickLisner() {
-            @Override
-            public void OnItemClick(int position) {
-                 String tenhang = listmh.get(position).getTenhang();
-                Intent intentADD = new Intent(getActivity(),InformationProduct.class);
-                intentADD.putExtra("idHang",tenhang);
-                startActivity(intentADD);
-            }
-        });
+//        listHang.add(new mathang(1,"a",3,"a"));
+//        listHang.add(new mathang(2,"b",4,"b"));
+//        listHang.add(new mathang(3,"c",5,"c"));
+
+        txt2=(TextView) root.findViewById(R.id.textView2);
+
 
         return root;
     }
 
 
+class getURL extends AsyncTask<String,Void,String>
+{
+    OkHttpClient client=new OkHttpClient.Builder().connectTimeout(15, TimeUnit.SECONDS)
+            .writeTimeout(15,TimeUnit.SECONDS)
+            .readTimeout(15,TimeUnit.SECONDS)
+            .retryOnConnectionFailure(true)
+            .build();
+    @Override
+    protected String doInBackground(String... strings) {
+        Request.Builder builder = new Request.Builder();
+        builder.url(strings[0]);
+        Request request=builder.build();
+        try {
+            Response response= client.newCall(request).execute();
+            return response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        return null;
+    }
+
+    @Override
+    protected void onPostExecute(String s) {
+        if(!s.equals(""))
+        {
+            ObjectMapper mapper=new ObjectMapper();
+            String json=  s;
+            try {
+                JSONArray array=new JSONArray(s);
+                for(int i=0;i<array.length();i++)
+                {
+                    mathang mh=new mathang();
+                    JSONObject object=array.getJSONObject(i);
+                    mh.setId(object.getInt("idmathang"));
+                    mh.setDonvitinh(object.getString("donvitinh"));
+                    mh.setTenhang(object.getString("tenhang"));
+                    mh.setGia(object.getDouble("gia"));
+                    listHang.add(mh);
+
+                }
+
+
+                recyclerView.setHasFixedSize(true);
+
+                layoutManager = new LinearLayoutManager(getActivity());
+                adapter = new ProductAdapter(listHang);
+                recyclerView.setLayoutManager(layoutManager);
+                recyclerView.setAdapter(adapter);
+
+                adapter.setOnPruductClickLisner(new ProductAdapter.OnProductClickLisner() {
+                    @Override
+                    public void OnItemClick(int position) {
+                        String tenhang = listHang.get(position).getTenhang();
+                        Intent intentADD = new Intent(getActivity(),InformationProduct.class);
+                        intentADD.putExtra("idHang",tenhang);
+                        startActivity(intentADD);
+                    }
+                });
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+        }
+
+        super.onPostExecute(s);
+    }
+}
 }
