@@ -13,13 +13,13 @@ import com.example.test2.model.mathang;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 
 import java.util.ArrayList;
-
+import  com.example.test2.model.cart;
 public class InformationProduct extends AppCompatActivity {
-    public static  ArrayList<mathang> listCart = new ArrayList<mathang>();
+    public static  ArrayList<cart> listCart = new ArrayList<cart>();
     private TextView mTextView,productname,productprice,productid;
     private Button addToCart;
     private ElegantNumberButton btnCount;
-    public mathang HANG;
+    public cart HANG;
     Integer idHang;
     String tenHang;
     Double giaHang;
@@ -62,7 +62,7 @@ public class InformationProduct extends AppCompatActivity {
             Toast.makeText(this,"DA THEM VAO GIO HANG",Toast.LENGTH_SHORT).show();
         }
         int soHang = Integer.parseInt(btnCount.getNumber());
-        HANG = new mathang(soHang,anhHang,(new Double(giaHang).longValue()) ,tenHang);
+        HANG = new cart(idHang,tenHang,(new Double(giaHang).longValue()),soHang,anhHang);
         listCart.add(HANG);
         Intent intentCart = new Intent(InformationProduct.this,UserCategory.class);
         startActivity(intentCart);
