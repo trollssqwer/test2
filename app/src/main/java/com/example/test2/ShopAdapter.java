@@ -62,8 +62,12 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     @Override
     public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
         cuahang currentShop = listCuaHang.get(position);
-
-        holder.imgProduct.setImageResource(R.drawable.ic_launcher_background);
+        if(position%2 == 0){
+            holder.imgProduct.setImageResource(R.drawable.s1);
+        }
+        else {
+            holder.imgProduct.setImageResource(R.drawable.s2);
+        }
         holder.priceProduct.setText(currentShop.getAnhcuahang());
         holder.nameProduct.setText(currentShop.getDiachicuahang());
         holder.desProduct.setText(String.valueOf(currentShop.getMacuahang()));

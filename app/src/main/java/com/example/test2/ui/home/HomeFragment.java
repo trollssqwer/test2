@@ -57,6 +57,7 @@ public class HomeFragment extends Fragment {
     private mathang mathang[];
     private TextView txt2;
     ArrayList<com.example.test2.model.mathang> listHang = new ArrayList<mathang>();
+    public static ArrayList<String> listURL = new ArrayList<String>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -81,6 +82,36 @@ public class HomeFragment extends Fragment {
                 startActivity(intentADD);
             }
         });
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://coffeemakingworld.com/wp-content/uploads/2018/11/Coffee-Americano.jpg");
+        listURL.add("https://u01.appmifile.com/images/2018/12/10/f951a8d0-7d03-484a-bf5b-b6ae57ba362a.png");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT8Qq53y4ve_H1OhlMfBCGJN5Q0ip4EUdyfo6iU1FWIYsjXfYy8&usqp=CAU");
+        listURL.add("https://lh3.googleusercontent.com/proxy/dFF8kISkLXGn1MtSjsKBWFX6MOGFAfdEMZaImi7po4pgMy9SktLhtELTmBgYM-Ha31XuriMXc8Eb9gd6Il6VGb3I0jPXF5fQxATY85qwR8upfjAbKA");
+        listURL.add("https://coffee.axys.asia/image/cache/catalog/foods/22-700x700.jpg");
+        listURL.add("https://product.hstatic.net/1000308381/product/cafe_s_a_d__2e232cfd7ff748d6846bc6d62778ba6d_master.jpg");
+        listURL.add("https://media.istockphoto.com/photos/cappuccino-with-coffee-beans-picture-id523167980?k=6&m=523167980&s=612x612&w=0&h=M3haXBG2oinWVAFrIqKn4XcgTPWygjVAmFn-0GZEdFM");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
+        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
+        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
 
         listmh=new ArrayList<>();
         new getURL().execute("http://35.198.237.116/coffeshop/api/mathangs");
@@ -153,7 +184,7 @@ class getURL extends AsyncTask<String,Void,String>
                         String tenhang = listHang.get(position).getTenhang();
                         int mahang = listHang.get(position).getId();
                         double giahang = listHang.get(position).getGia();
-                        String imghang = listHang.get(position).getDonvitinh();
+                        String imghang = listURL.get(position).toString();
                         Intent intentADD = new Intent(getActivity(),InformationProduct.class);
                         intentADD.putExtra("tenHang",tenhang);
                         intentADD.putExtra("maHang",mahang);

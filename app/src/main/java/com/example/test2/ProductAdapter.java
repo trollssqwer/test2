@@ -1,6 +1,9 @@
 package com.example.test2;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +15,15 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.test2.model.mathang;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
+import com.example.test2.ui.home.HomeFragment;
+
+import static com.example.test2.ui.home.HomeFragment.listURL;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
+
     private ArrayList<mathang> listHang;
     private OnProductClickLisner Mlisner;
     public interface OnProductClickLisner{
@@ -64,10 +73,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-        mathang currentProdcut = listHang.get(position);
-        String id="R.drawble"+String.valueOf(currentProdcut.getId());
 
-        holder.imgProduct.setImageResource(R.drawable.mh1);
+        mathang currentProdcut = listHang.get(position);
+//
+        new DownLoadImageTask(holder.imgProduct).execute(listURL.get(position).toString());
+        //holder.imgProduct.setImageResource(R.drawable.mh1);
         holder.priceProduct.setText(String.valueOf(currentProdcut.getGia()));
         holder.nameProduct.setText(currentProdcut.getTenhang());
         holder.desProduct.setText(currentProdcut.getTenhang());
@@ -79,4 +89,42 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
 
+
+
+
+    private class DownLoadImageTask extends AsyncTask<String,Void, Bitmap> {
+        ImageView imageView;
+
+        public DownLoadImageTask(ImageView imageView){
+            this.imageView = imageView;
+        }
+
+        /*
+            doInBackground(Params... params)
+                Override this method to perform a computation on a background thread.
+         */
+        protected Bitmap doInBackground(String...urls){
+            String urlOfImage = urls[0];
+            Bitmap logo = null;
+            try{
+                InputStream is = new URL(urlOfImage).openStream();
+                /*
+                    decodeStream(InputStream is)
+                        Decode an input stream into a bitmap.
+                 */
+                logo = BitmapFactory.decodeStream(is);
+            }catch(Exception e){ // Catch the download exception
+                e.printStackTrace();
+            }
+            return logo;
+        }
+
+        /*
+            onPostExecute(Result result)
+                Runs on the UI thread after doInBackground(Params...).
+         */
+        protected void onPostExecute(Bitmap result){
+            imageView.setImageBitmap(result);
+        }
+    }
 }
