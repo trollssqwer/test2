@@ -4,70 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/welcome"
+    android:background="@drawable/bg2"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id = "@+id/main_app_logo"
+        android:id="@+id/main_app_logo"
         android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
+        android:layout_height="250dp"
         android:layout_marginTop="50dp"
-        android:src="@drawable/applogo"
-        />
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="60dp"
+        android:background="?attr/listChoiceBackgroundIndicator"
+        android:src="@drawable/logo2"
+        app:srcCompat="@drawable/logo2" />
+
+
     <TextView
         android:id="@+id/main_app_slogan"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="80dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="273dp"
+        android:layout_marginEnd="48dp"
         android:text="Poring in your capuchino"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+
         android:textSize="22sp"
-        android:textStyle="bold|italic"
-
-        />
-
-
+        android:textStyle="bold|italic" />
 
     <Button
         android:id="@+id/main_button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/buttons"
-        android:textSize="18sp"
-        android:text="Aready have acount ? Login"
         android:padding="20dp"
-        android:textColor="@android:color/white"
+        android:text="Aready have acount ? Login"
         android:textAllCaps="true"
-        />
-
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
 
     <Button
         android:id="@+id/main_button_join"
-        android:layout_above="@+id/main_button_login"
-        android:layout_width="match_parent"
+        android:layout_width="393dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/main_button_login"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/input_desgin"
+        android:layout_marginBottom="17dp"
+        android:background="@drawable/buttons"
         android:padding="20dp"
         android:text="Join now"
-        android:textStyle="bold"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="18sp">
+        android:textSize="18sp"
+        android:textStyle="bold">
 
     </Button>
 </RelativeLayout>
