@@ -52,6 +52,7 @@ public class HomeFragment extends Fragment {
         adapter.setOnPruductClickLisner(new ProductAdapter.OnProductClickLisner() {
             @Override
             public void OnItemClick(int position) {
+                int a;
                  String tenhang = listHang.get(position).getTenhang();
                 Intent intentADD = new Intent(getActivity(),InformationProduct.class);
                 intentADD.putExtra("idHang",tenhang);
