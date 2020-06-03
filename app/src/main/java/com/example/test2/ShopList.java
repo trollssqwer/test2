@@ -119,7 +119,7 @@ public class ShopList extends AppCompatActivity {
                         public void OnItemClick(int position) {
                             int MaCuaHang = SlistHang.get(position).getMacuahang();
 
-                            intentSHOP.putExtra("idHang",MaCuaHang);
+                            intentSHOP.putExtra("idcuahang",MaCuaHang);
                             startActivity(intentSHOP);
                         }
                     });
