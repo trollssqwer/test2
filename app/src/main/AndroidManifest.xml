@@ -4,9 +4,7 @@
 
 
 
-
-
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    //cmt
 
     <application
         android:allowBackup="true"
