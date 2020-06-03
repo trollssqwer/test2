@@ -1,4 +1,7 @@
 package com.example.test2;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +12,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.test2.model.mathang;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import com.example.test2.model.cart;
+
+import static com.example.test2.ui.home.HomeFragment.listURL;
+
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
     private ArrayList<cart> listHang;
     private OnProductClickLisner Mlisner;
@@ -63,7 +71,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         cart currentProdcut = listHang.get(position);
 
-        holder.imgProduct.setImageResource(R.drawable.ic_launcher_background);
+        //holder.imgProduct.setImageResource(R.drawable.ic_launcher_background);
+        new DownLoadImageTask(holder.imgProduct).execute(listURL.get(position).toString());
         holder.priceProduct.setText(String.valueOf(currentProdcut.getGiaHang()));
         holder.nameProduct.setText(currentProdcut.getTenHang());
         holder.desProduct.setText(String.valueOf(currentProdcut.getSoluong()));
@@ -74,5 +83,42 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         return listHang.size();
     }
 
+
+
+    private class DownLoadImageTask extends AsyncTask<String,Void, Bitmap> {
+        ImageView imageView;
+
+        public DownLoadImageTask(ImageView imageView){
+            this.imageView = imageView;
+        }
+
+        /*
+            doInBackground(Params... params)
+                Override this method to perform a computation on a background thread.
+         */
+        protected Bitmap doInBackground(String...urls){
+            String urlOfImage = urls[0];
+            Bitmap logo = null;
+            try{
+                InputStream is = new URL(urlOfImage).openStream();
+                /*
+                    decodeStream(InputStream is)
+                        Decode an input stream into a bitmap.
+                 */
+                logo = BitmapFactory.decodeStream(is);
+            }catch(Exception e){ // Catch the download exception
+                e.printStackTrace();
+            }
+            return logo;
+        }
+
+        /*
+            onPostExecute(Result result)
+                Runs on the UI thread after doInBackground(Params...).
+         */
+        protected void onPostExecute(Bitmap result){
+            imageView.setImageBitmap(result);
+        }
+    }
 
 }
