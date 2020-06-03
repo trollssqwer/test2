@@ -2,13 +2,11 @@ package com.example.test2.model;
 
 public class cuahang {
     int macuahang;
-    String anhcuahang;
     String tencuahang;
     String diachicuahang;
 
     public cuahang(int macuahang, String anhcuahang, String tencuahang, String diachicuahang) {
         this.macuahang = macuahang;
-        this.anhcuahang = anhcuahang;
         this.tencuahang = tencuahang;
         this.diachicuahang = diachicuahang;
     }
@@ -25,13 +23,9 @@ public class cuahang {
         this.macuahang = macuahang;
     }
 
-    public String getAnhcuahang() {
-        return anhcuahang;
-    }
 
-    public void setAnhcuahang(String anhcuahang) {
-        this.anhcuahang = anhcuahang;
-    }
+
+
 
     public String getTencuahang() {
         return tencuahang;
