@@ -1,5 +1,6 @@
 package com.example.test2.ui.slideshow;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +18,19 @@ import com.example.test2.R;
 import com.example.test2.model.hoadon;
 import com.example.test2.model.hoadonAdapter;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class SlideshowFragment extends Fragment {
 
@@ -49,4 +60,51 @@ public class SlideshowFragment extends Fragment {
 
         return root;
     }
+    class getURL extends AsyncTask<String,Void,String>
+    {
+        OkHttpClient client=new OkHttpClient.Builder().connectTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15,TimeUnit.SECONDS)
+                .readTimeout(15,TimeUnit.SECONDS)
+                .retryOnConnectionFailure(true)
+                .build();
+        @Override
+        protected String doInBackground(String... strings) {
+            Request.Builder builder = new Request.Builder();
+            builder.url(strings[0]);
+            Request request=builder.build();
+            try {
+                Response response= client.newCall(request).execute();
+                return response.body().string();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            if(!s.equals(""))
+            {
+                try {
+                    JSONArray jsonArray=new JSONArray(s);
+                    for(int i=0;i<jsonArray.length();i++)
+                    {
+                        hoadon hd=new hoadon();
+                        JSONObject object=jsonArray.getJSONObject(i);
+                        hd.setId(object.getInt("idhoadon"));
+
+
+                    }
+                    adapter.notifyDataSetChanged();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            super.onPostExecute(s);
+        }
+    }
+
 }

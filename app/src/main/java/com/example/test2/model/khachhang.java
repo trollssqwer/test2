@@ -6,6 +6,15 @@ public class khachhang {
     private String email;
     private String facebook;
     private String tenkhachhang;
+    private int idloaikhachhang;
+
+    public int getIdloaikhachhang() {
+        return idloaikhachhang;
+    }
+
+    public void setIdloaikhachhang(int idloaikhachhang) {
+        this.idloaikhachhang = idloaikhachhang;
+    }
 
     public khachhang() {
     }

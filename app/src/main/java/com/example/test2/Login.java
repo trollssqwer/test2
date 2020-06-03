@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.test2.model.khachhang;
 import com.example.test2.model.mathang;
+import com.example.test2.ui.tools.ToolsFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,7 +46,7 @@ public class Login extends AppCompatActivity {
         CheckAdminTextView = (TextView) findViewById(R.id.login_admin_check);
         NoCheckAdminTextView = (TextView) findViewById(R.id.login_admin_nocheck);
         loadingBar = new ProgressDialog(this);
-
+        listkh=new ArrayList<khachhang>();
 
         CheckAdminTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +91,7 @@ public class Login extends AppCompatActivity {
             loadingBar.show();
 
             // check database
-            ValidateLogin();
+            new getURL().execute("http://35.198.237.116/coffeshop/api/Khachhangs");
         }
     }
 
@@ -98,7 +99,7 @@ public class Login extends AppCompatActivity {
     private void ValidateLogin(){
         //check user, passwrod
 
-        new getURL().execute("http://35.198.237.116/coffeshop/api/Khachhangs");
+
     }
     class getURL extends AsyncTask<String,Void,String>
     {
@@ -141,26 +142,33 @@ public class Login extends AppCompatActivity {
 
                     }
                     boolean kt=false;
+                    int icur=0;
                     for(int i=0;i<listkh.size();i++)
                     {
-                        if(listkh.get(i).getSodienthoai()==username)
+                        String temp=listkh.get(i).getSodienthoai();
+                        if(username.equals(temp))
                         {
+                            icur=i;
                             kt=true;
                             break;
                         }
-                        kt=false;
-                    }
-                    if(kt=true)
-                    {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Intent intenta = new Intent(Login.this,ShopList.class);
-                                startActivity(intenta);
-                            }
-                        });
 
                     }
+                    if(kt==true)
+                    {
+                        Intent intenta = new Intent(Login.this,ShopList.class);
+
+                        intenta.putExtra("idkhachhang1",listkh.get(icur).getIdkhachhang());
+                        intenta.putExtra("tenkhachhang1",listkh.get(icur).getTenkhachhang());
+                        intenta.putExtra("email1",listkh.get(icur).getEmail());
+                        intenta.putExtra("facebook1",listkh.get(icur).getFacebook());
+                        intenta.putExtra("idloaikhachhang1",listkh.get(icur).getIdloaikhachhang());
+                        intenta.putExtra("sodienthoai1",listkh.get(icur).getSodienthoai());
+
+
+
+                        startActivity(intenta);
+                        }
                     else
                     {
                         Toast.makeText(Login.this,"Tài khoản không đúng",Toast.LENGTH_LONG).show();
