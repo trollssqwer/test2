@@ -133,8 +133,14 @@ class getURL extends AsyncTask<String,Void,String>
                     @Override
                     public void OnItemClick(int position) {
                         String tenhang = listHang.get(position).getTenhang();
+                        int mahang = listHang.get(position).getId();
+                        double giahang = listHang.get(position).getGia();
+                        String imghang = listHang.get(position).getDonvitinh();
                         Intent intentADD = new Intent(getActivity(),InformationProduct.class);
-                        intentADD.putExtra("idHang",tenhang);
+                        intentADD.putExtra("tenHang",tenhang);
+                        intentADD.putExtra("maHang",mahang);
+                        intentADD.putExtra("giaHang",giahang);
+                        intentADD.putExtra("imgHang",imghang);
                         startActivity(intentADD);
                     }
                 });
