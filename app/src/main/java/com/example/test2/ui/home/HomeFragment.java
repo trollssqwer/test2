@@ -65,6 +65,23 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         listHang =new ArrayList<mathang>();
         recyclerView = root.findViewById(R.id.rv_main);
+
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(getActivity());
+        adapter = new ProductAdapter(listHang);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        adapter.setOnPruductClickLisner(new ProductAdapter.OnProductClickLisner() {
+            @Override
+            public void OnItemClick(int position) {
+                int a;
+                 String tenhang = listHang.get(position).getTenhang();
+                Intent intentADD = new Intent(getActivity(),InformationProduct.class);
+                intentADD.putExtra("idHang",tenhang);
+                startActivity(intentADD);
+            }
+        });
+
         listmh=new ArrayList<>();
         new getURL().execute("http://35.198.237.116/coffeshop/api/mathangs");
 
@@ -73,6 +90,7 @@ public class HomeFragment extends Fragment {
 //        listHang.add(new mathang(3,"c",5,"c"));
 
         txt2=(TextView) root.findViewById(R.id.textView2);
+
 
 
         return root;
