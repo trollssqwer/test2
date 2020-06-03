@@ -34,6 +34,7 @@ public class ShopList extends AppCompatActivity {
         SrecyclerView.setLayoutManager(SlayoutManager);
         SrecyclerView.setAdapter(Sadapter);
         Sadapter.setOnPruductClickLisner(new ShopAdapter.OnShopClickLisner() {
+            //sassadas
             @Override
             public void OnItemClick(int position) {
                 int MaCuaHang = SlistHang.get(position).getMacuahang();
