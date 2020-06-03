@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.test2.model.mathang;
 
 import java.util.ArrayList;
-
+import com.example.test2.model.cart;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
-    private ArrayList<mathang> listHang;
+    private ArrayList<cart> listHang;
     private OnProductClickLisner Mlisner;
     public interface OnProductClickLisner{
         void OnItemClick(int position);
@@ -48,7 +48,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         }
     }
 
-    public CartAdapter(ArrayList<mathang> list){
+    public CartAdapter(ArrayList<cart> list){
         listHang = list;
     }
     @NonNull
@@ -61,12 +61,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-        mathang currentProdcut = listHang.get(position);
+        cart currentProdcut = listHang.get(position);
 
         holder.imgProduct.setImageResource(R.drawable.ic_launcher_background);
-        holder.priceProduct.setText(String.valueOf(currentProdcut.getGia()));
-        holder.nameProduct.setText(currentProdcut.getTenhang());
-        holder.desProduct.setText(String.valueOf(currentProdcut.getId()));
+        holder.priceProduct.setText(String.valueOf(currentProdcut.getGiaHang()));
+        holder.nameProduct.setText(currentProdcut.getTenHang());
+        holder.desProduct.setText(String.valueOf(currentProdcut.getSoluong()));
     }
 
     @Override
