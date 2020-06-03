@@ -1,5 +1,7 @@
 package com.example.test2.ui.gallery;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -60,8 +63,26 @@ public class GalleryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //THANH TOAN
-                Intent intent = new Intent(getActivity(), UserCategory.class);
-                startActivity(intent);
+
+                AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+                alert.setTitle("THANH TOAN");
+                alert.setMessage("BAN MUON THANH TOAN HOA DON ?");
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getContext(),"Thanh toan thanh cong!",Toast.LENGTH_LONG).show();
+                        listCart.clear();
+                        Intent intent = new Intent(getActivity(), UserCategory.class);
+                        startActivity(intent);
+                    }
+                });
+                alert.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getActivity(),"Huy thanh toan",Toast.LENGTH_LONG).show();
+                    }
+                });
+                alert.create().show();
             }
         });
 
