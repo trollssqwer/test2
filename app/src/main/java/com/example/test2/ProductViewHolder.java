@@ -18,8 +18,7 @@ import java.util.ListIterator;
 
 public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
-    public TextView txtProductName, txtProductDescription, txtProductPrice;
-    public ImageView imageView;
+
     public ItemClickListner listner;
     public List<mathang> listA;
 
@@ -154,10 +153,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder implements View.O
         listA.add(a);
         listA.add(b);
 
-        imageView = (ImageView) itemView.findViewById(R.id.product_image);
-        txtProductName = (TextView) itemView.findViewById(R.id.product_name);
-        txtProductDescription = (TextView) itemView.findViewById(R.id.product_description);
-        txtProductPrice = (TextView) itemView.findViewById(R.id.product_price);
+
     }
 
     public void setItemClickListner(ItemClickListner listner)
