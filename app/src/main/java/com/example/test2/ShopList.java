@@ -43,6 +43,7 @@ public class ShopList extends AppCompatActivity {
 //        SlistHang.add(new cuahang(1,"a","a","a"));
         SrecyclerView =   findViewById(R.id.rv_shoplist);
         SlayoutManager = new LinearLayoutManager(this);
+
         new getURL().execute("http://35.198.237.116/coffeshop/api/cuahangs");
 
 
@@ -65,6 +66,19 @@ public class ShopList extends AppCompatActivity {
                 return response.body().string();
             } catch (IOException e) {
                 e.printStackTrace();
+
+        Sadapter = new ShopAdapter(SlistHang);
+        SrecyclerView.setLayoutManager(SlayoutManager);
+        SrecyclerView.setAdapter(Sadapter);
+        Sadapter.setOnPruductClickLisner(new ShopAdapter.OnShopClickLisner() {
+            //sassadas
+            @Override
+            public void OnItemClick(int position) {
+                int MaCuaHang = SlistHang.get(position).getMacuahang();
+                Intent intentSHOP = new Intent(ShopList.this,UserCategory.class);
+                intentSHOP.putExtra("idHang",MaCuaHang);
+                startActivity(intentSHOP);
+
             }
 
             return null;
