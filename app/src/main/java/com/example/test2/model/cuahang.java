@@ -4,6 +4,11 @@ public class cuahang {
     int macuahang;
     String tencuahang;
     String diachicuahang;
+    String anhcuahang;
+
+    public String getAnhcuahang() {
+        return anhcuahang;
+    }
 
     public cuahang(int macuahang, String anhcuahang, String tencuahang, String diachicuahang) {
         this.macuahang = macuahang;
@@ -41,5 +46,10 @@ public class cuahang {
 
     public void setDiachicuahang(String diachicuahang) {
         this.diachicuahang = diachicuahang;
+    }
+
+    public void setAnhcuahang(String a) {
+
+        anhcuahang=a;
     }
 }
