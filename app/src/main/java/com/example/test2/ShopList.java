@@ -33,7 +33,10 @@ public class ShopList extends AppCompatActivity {
     private RecyclerView SrecyclerView;
     private ShopAdapter Sadapter;
     private RecyclerView.LayoutManager SlayoutManager;
+    private int idkhachhang,idloaikhachhang;
+    private String email,facebook,sodienthoai,tenkhachhang;
     ArrayList<cuahang> SlistHang = new ArrayList<cuahang>();
+    Intent intentSHOP;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +47,24 @@ public class ShopList extends AppCompatActivity {
         SrecyclerView =   findViewById(R.id.rv_shoplist);
         SlayoutManager = new LinearLayoutManager(this);
 
+
+        Intent intenuser=getIntent();
+        intentSHOP = new Intent(ShopList.this,UserCategory.class);
+        //getdata from login
+        idkhachhang=intenuser.getIntExtra("idkhachhang1",0);
+        idloaikhachhang=intenuser.getIntExtra("idloaikhachhang1",0);
+        email=intenuser.getStringExtra("email1");
+        sodienthoai=intenuser.getStringExtra("sodienthoai1");
+        facebook=intenuser.getStringExtra("facebook1");
+        tenkhachhang=intenuser.getStringExtra("tenkhachhang1");
+
+        //post data to usercata
+        intentSHOP.putExtra("idkhachhang1",idkhachhang);
+        intentSHOP.putExtra("tenkhachhang1",tenkhachhang);
+        intentSHOP.putExtra("email1",email);
+        intentSHOP.putExtra("facebook1",facebook);
+        intentSHOP.putExtra("idloaikhachhang1",idloaikhachhang);
+        intentSHOP.putExtra("sodienthoai1",sodienthoai);
         new getURL().execute("http://35.198.237.116/coffeshop/api/cuahangs");
 
 
@@ -67,23 +88,8 @@ public class ShopList extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
 
-        Sadapter = new ShopAdapter(SlistHang);
-        SrecyclerView.setLayoutManager(SlayoutManager);
-        SrecyclerView.setAdapter(Sadapter);
-        Sadapter.setOnPruductClickLisner(new ShopAdapter.OnShopClickLisner() {
-            //sassadas
-            @Override
-            public void OnItemClick(int position) {
-                int MaCuaHang = SlistHang.get(position).getMacuahang();
-                Intent intentSHOP = new Intent(ShopList.this,UserCategory.class);
-                intentSHOP.putExtra("idHang",MaCuaHang);
-                startActivity(intentSHOP);
-
-            }
-
-            return null;
-        }
-
+                return null;
+            }}
         @Override
         protected void onPostExecute(String s) {
             if(!s.equals(""))
@@ -112,7 +118,7 @@ public class ShopList extends AppCompatActivity {
                         @Override
                         public void OnItemClick(int position) {
                             int MaCuaHang = SlistHang.get(position).getMacuahang();
-                            Intent intentSHOP = new Intent(ShopList.this,UserCategory.class);
+
                             intentSHOP.putExtra("idHang",MaCuaHang);
                             startActivity(intentSHOP);
                         }
@@ -123,6 +129,6 @@ public class ShopList extends AppCompatActivity {
             }
 
             super.onPostExecute(s);
-        }
-    }
-}
+        }}}
+
+

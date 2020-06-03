@@ -21,6 +21,10 @@ public class hoadon {
         this.diachi = diachi;
     }
 
+    public hoadon() {
+
+    }
+
     public String getDiachi() {
         return diachi;
     }

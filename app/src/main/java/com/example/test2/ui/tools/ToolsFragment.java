@@ -1,6 +1,7 @@
 package com.example.test2.ui.tools;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,17 +35,22 @@ public class ToolsFragment extends Fragment {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
+
             }
         });
-        khachhang kh=new khachhang(1,"123456","fackbook@gmail.com","https://www.facebook.com/a.98","Toan");
+        Intent intenta1= getActivity().getIntent();
+        int kt=intenta1.getIntExtra("idkhachhang1",0);
+        //khachhang kh=new khachhang(1,"123456","fackbook@gmail.com","https://www.facebook.com/a.98","Toan");
+        khachhang kh=new khachhang();
         txtHoten = root.findViewById(R.id.txtHoten);
         txtEmail=root.findViewById(R.id.txt_Email);
         txtSodienthoai=root.findViewById(R.id.txt_Sodienthoai);
         txt_name=root.findViewById(R.id.textviewHoTen);
-        txtHoten.setText(kh.getTenkhachhang());
-        txtEmail.setText(kh.getEmail());
-        txtSodienthoai.setText(kh.getSodienthoai());
-        txt_name.setText(kh.getTenkhachhang());
+
+        txtHoten.setText(intenta1.getStringExtra("tenkhachhang1"));
+        txtEmail.setText(intenta1.getStringExtra("email1"));
+        txtSodienthoai.setText(intenta1.getStringExtra("sodienthoai1"));
+        txt_name.setText(intenta1.getStringExtra("tenkhachhang1"));
 
         return root;
     }
