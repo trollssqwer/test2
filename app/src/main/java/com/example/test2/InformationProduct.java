@@ -44,6 +44,9 @@ public class InformationProduct extends AppCompatActivity {
         mTextView = (TextView) findViewById(R.id.text);
         addToCart = (Button) findViewById(R.id.pd_add_to_cart_button);
 
+//
+
+
 
         addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
