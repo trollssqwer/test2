@@ -46,7 +46,7 @@ public class GalleryFragment extends Fragment {
                 ViewModelProviders.of(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
         totalCount = root.findViewById(R.id.total_price);
-
+////aa
         totalCount.setText(TongTien().toString());
         nextbtn = root.findViewById(R.id.next_btn);
         CrecyclerView =  root.findViewById(R.id.cart_list);
