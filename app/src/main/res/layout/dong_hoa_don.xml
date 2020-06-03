@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/txt_diachi"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Địa chỉ"
+        android:textSize="24dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="104dp" />
+    <TextView
+        android:id="@+id/txt_ngaymua"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txt_diachi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ngày mua"
+        android:textSize="18dp"
+        android:layout_marginLeft="10dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="56dp" />
+
+
+    <TextView
+        android:id="@+id/txt_sotien"
+        android:layout_below="@id/txt_diachi"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Địa chỉ"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="75dp" />
+
+
+
+</RelativeLayout>
+

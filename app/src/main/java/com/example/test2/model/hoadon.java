@@ -9,15 +9,24 @@ public class hoadon {
     private float sotiennhan;
     private float sotientralai;
     private Date ngaymua;
+    private String diachi;
 
-    public hoadon(long id, long idkhachhang, long idnhanvien, float sotiennhan, float sotientralai, Date ngaymua) {
-        super();
+    public hoadon(long id, long idkhachhang, long idnhanvien, float sotiennhan, float sotientralai, Date ngaymua, String diachi) {
         this.id = id;
         this.idkhachhang = idkhachhang;
         this.idnhanvien = idnhanvien;
         this.sotiennhan = sotiennhan;
         this.sotientralai = sotientralai;
         this.ngaymua = ngaymua;
+        this.diachi = diachi;
+    }
+
+    public String getDiachi() {
+        return diachi;
+    }
+
+    public void setDiachi(String diachi) {
+        this.diachi = diachi;
     }
 
     public long getId() {
@@ -69,3 +78,4 @@ public class hoadon {
     }
 
 }
+
