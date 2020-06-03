@@ -57,6 +57,7 @@ public class GalleryFragment extends Fragment {
     private String idkh;
     private String idcuahang;
     private String idhd;
+    int dem=0;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel =
@@ -73,6 +74,7 @@ public class GalleryFragment extends Fragment {
         CrecyclerView.setLayoutManager(ClayoutManager);
         CrecyclerView.setAdapter(Cadapter);
         Intent intenta1= getActivity().getIntent();
+        dem=listCart.size();
         idkh= String.valueOf(intenta1.getIntExtra("idkhachhang1",10));
         idcuahang=intenta1.getStringExtra("idcuahang");
         nextbtn.setOnClickListener(new View.OnClickListener() {
@@ -169,16 +171,15 @@ public class GalleryFragment extends Fragment {
                     .build();
             MediaType mediaType = MediaType.parse("application/json");
             Log.d("AAA","Tạo thanh công");
-            for(int i=0;i<listCart.size();i++)
-            {
+
                 String idhangcart;
                 String soluongcart;
                 String giagiahientaicart;
                 String thanhtiencart;
-                idhangcart=String.valueOf(listCart.get(i).getIdHang());
-                soluongcart=String.valueOf(listCart.get(i).getSoluong());
-                giagiahientaicart=String.valueOf(listCart.get(i).getGiaHang());
-                thanhtiencart=String.valueOf(listCart.get(i).getSoluong()*listCart.get(i).getGiaHang());
+                idhangcart=String.valueOf(listCart.get(dem).getIdHang());
+                soluongcart=String.valueOf(listCart.get(dem).getSoluong());
+                giagiahientaicart=String.valueOf(listCart.get(dem).getGiaHang());
+                thanhtiencart=String.valueOf(listCart.get(dem).getSoluong()*listCart.get(dem).getGiaHang());
 
                 RequestBody body = RequestBody.create(mediaType, "{\r\n\t\t\t\"idhoadon\": "+idhd+",\r\n            \"idmathang\": "+idhangcart+",\r\n            \"soluong\":"+ soluongcart+",\r\n            \"giatienhientai\": "+giagiahientaicart+",\r\n            \"thanhtien\": "+thanhtiencart+"\r\n}");
                 Request request = new Request.Builder()
@@ -187,12 +188,17 @@ public class GalleryFragment extends Fragment {
                         .build();
                 try {
                     Response response = client.newCall(request).execute();
-                    return  response.body().string();
+                    dem++;
+                    if(dem==listCart.size())
+                    {
+                        return  response.body().string();
+                    }
+                   new postCTToServer().execute("http://172.20.10.5:8080/api/dathangchitiet");
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
+
 
             return null;
         }
