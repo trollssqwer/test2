@@ -89,7 +89,7 @@ public class GalleryFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getContext(),"Thanh toan thanh cong!",Toast.LENGTH_LONG).show();
-                    new postToServer().execute("http://127.0.0.1:8080/api/dathang");
+                    new postToServer().execute("http://35.198.237.116/api/dathang");
 
                     }
                 });
@@ -134,7 +134,8 @@ public class GalleryFragment extends Fragment {
             MediaType mediaType = MediaType.parse("application/json");
             Log.d("AAA","Tạo thanh công");
             //RequestBody body = RequestBody.create(mediaType, "{\r\n\t\t\t\"idkhachhang\": "+ idkh+",\r\n            \"tongtienbandau\": "+ tongtien+",\r\n            \"tongtienthanhtoan\": "+tongtien+",\r\n            \"idcuahang\": \""+idcuahang+"\"\r\n}");
-            RequestBody body = RequestBody.create(mediaType, "{\r\n\t\t\t\"idkhachhang\": "+idkh+",\r\n            \"tongtienbandau\": "+tongtien+",\r\n            \"tongtienthanhtoan\": "+tongtien+",\r\n            \"idcuahang\": "+idcuahang+"\r\n}");
+            //RequestBody body = RequestBody.create(mediaType, "{\r\n\t\t\t\"idkhachhang\": "+"13"+",\r\n            \"tongtienbandau\": "+tongtien+",\r\n            \"tongtienthanhtoan\": "+tongtien+",\r\n            \"idcuahang\": "+idcuahang+"\r\n}");
+            RequestBody body = RequestBody.create(mediaType, "{\r\n\t\t\t\"idkhachhang\": 13,\r\n            \"tongtienbandau\": "+tongtien+",\r\n            \"tongtienthanhtoan\": "+tongtien+",\r\n            \"idcuahang\": \"1\"\r\n}");
             Request request = new Request.Builder()
                     .url("http://172.20.10.5:8080/api/dathang")
                     .method("POST", body)
@@ -155,7 +156,7 @@ public class GalleryFragment extends Fragment {
             if(!s.equals(""))
             {
                 idhd=s;
-                new postCTToServer().execute("http://172.20.10.5:8080/api/dathangchitiet");
+                new postCTToServer().execute("http://35.198.237.116/api/dathangchitiet");
             }
             super.onPostExecute(s);
         }
@@ -171,33 +172,30 @@ public class GalleryFragment extends Fragment {
                     .build();
             MediaType mediaType = MediaType.parse("application/json");
             Log.d("AAA","Tạo thanh công");
-
+            for(int i=0;i<listCart.size();i++)
+            {
                 String idhangcart;
                 String soluongcart;
                 String giagiahientaicart;
                 String thanhtiencart;
-                idhangcart=String.valueOf(listCart.get(dem).getIdHang());
-                soluongcart=String.valueOf(listCart.get(dem).getSoluong());
-                giagiahientaicart=String.valueOf(listCart.get(dem).getGiaHang());
-                thanhtiencart=String.valueOf(listCart.get(dem).getSoluong()*listCart.get(dem).getGiaHang());
+                idhangcart=String.valueOf(listCart.get(i).getIdHang());
+                soluongcart=String.valueOf(listCart.get(i).getSoluong());
+                giagiahientaicart=String.valueOf(listCart.get(i).getGiaHang());
+                thanhtiencart=String.valueOf(listCart.get(i).getSoluong()*listCart.get(i).getGiaHang());
 
                 RequestBody body = RequestBody.create(mediaType, "{\r\n\t\t\t\"idhoadon\": "+idhd+",\r\n            \"idmathang\": "+idhangcart+",\r\n            \"soluong\":"+ soluongcart+",\r\n            \"giatienhientai\": "+giagiahientaicart+",\r\n            \"thanhtien\": "+thanhtiencart+"\r\n}");
                 Request request = new Request.Builder()
-                        .url("http://172.20.10.5:8080/api/dathangchitiet")
+                        .url("http://35.198.237.116/api/dathangchitiet")
                         .method("POST", body)
                         .build();
                 try {
                     Response response = client.newCall(request).execute();
-                    dem++;
-                    if(dem==listCart.size())
-                    {
-                        return  response.body().string();
-                    }
-                   new postCTToServer().execute("http://172.20.10.5:8080/api/dathangchitiet");
-
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    return  response.body().string();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
                 }
+            }
+
 
 
             return null;

@@ -120,7 +120,7 @@ public class HomeFragment extends Fragment {
 //        listHang.add(new mathang(2,"b",4,"b"));
 //        listHang.add(new mathang(3,"c",5,"c"));
 
-        txt2=(TextView) root.findViewById(R.id.textView2);
+        //txt2=(TextView) root.findViewById(R.id.textView2);
 
 
 

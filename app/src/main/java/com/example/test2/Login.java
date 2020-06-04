@@ -75,6 +75,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void LoginUser(){
+
         username = UsernameEditText.getText().toString();
         password = PasswordEditText.getText().toString();
 
@@ -164,9 +165,6 @@ public class Login extends AppCompatActivity {
                         intenta.putExtra("facebook1",listkh.get(icur).getFacebook());
                         intenta.putExtra("idloaikhachhang1",listkh.get(icur).getIdloaikhachhang());
                         intenta.putExtra("sodienthoai1",listkh.get(icur).getSodienthoai());
-
-
-
                         startActivity(intenta);
                         }
                     else

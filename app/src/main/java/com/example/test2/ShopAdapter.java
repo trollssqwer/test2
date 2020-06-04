@@ -32,8 +32,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
             super(itemView);
             imgProduct = itemView.findViewById(R.id.shop_image);
             nameProduct = itemView.findViewById(R.id.shop_name);
-            desProduct = itemView.findViewById(R.id.shop_description);
-            priceProduct = itemView.findViewById(R.id.shop_address);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -68,9 +67,8 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         else {
             holder.imgProduct.setImageResource(R.drawable.s2);
         }
-        holder.priceProduct.setText(currentShop.getAnhcuahang());
         holder.nameProduct.setText(currentShop.getDiachicuahang());
-        holder.desProduct.setText(String.valueOf(currentShop.getMacuahang()));
+
     }
 
     @Override

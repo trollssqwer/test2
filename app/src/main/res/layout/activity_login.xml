@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/login_app_logo"
-        android:layout_width="288dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="270dp"
+        android:layout_height="144dp"
         android:layout_marginLeft="65dp"
+        android:layout_marginTop="100dp"
         android:layout_marginRight="65dp"
 
         android:background="@drawable/logo2" />
@@ -24,6 +24,7 @@
         android:layout_below="@+id/login_app_logo"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/input_desgin"
         android:hint="Ten dang nhap"
         android:inputType="text"
