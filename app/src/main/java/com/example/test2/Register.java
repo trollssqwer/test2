@@ -7,24 +7,31 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.test2.ui.gallery.GalleryFragment;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class Register extends AppCompatActivity {
     private Button CreateAccountButton;
     private EditText UserNameEditText,PasswordEditText,PhoneNumberEditText;
     private ProgressDialog loadingBar;
+    String name;
+    String password;
+    String phonenumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +42,7 @@ public class Register extends AppCompatActivity {
         PhoneNumberEditText = (EditText) findViewById(R.id.register_numberphone);
         loadingBar = new ProgressDialog(this);
         //Create Account
-        new getURL().execute("http://35.198.237.116/coffeshop/api/mathangs");
+
         CreateAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,9 +53,9 @@ public class Register extends AppCompatActivity {
     }
     //Check input account
     private void CreateAccount() {
-        String name = UserNameEditText.getText().toString();
-        String password = PasswordEditText.getText().toString();
-        String phonenumber = PhoneNumberEditText.getText().toString();
+        name = UserNameEditText.getText().toString();
+        password = PasswordEditText.getText().toString();
+        phonenumber = PhoneNumberEditText.getText().toString();
 
         if(TextUtils.isEmpty(name)){
             Toast.makeText(this,"Hay dien ten dang nhap",Toast.LENGTH_LONG).show();
@@ -74,46 +81,53 @@ public class Register extends AppCompatActivity {
         //Kien tra dieu kien user
 
         if(username == "a"){
-            Toast.makeText(Register.this,"Ten dang nhap hoac so dien thoai da ton tai !",Toast.LENGTH_LONG).show();
+            Toast.makeText(Register.this,"Đã tồn tại!",Toast.LENGTH_LONG).show();
         }
         else {
 
-            Toast.makeText(Register.this,"Ten dang nhap hoac so dien thoai da ton tai !",Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(Register.this,MainActivity.class);
-            startActivity(intent);
+           new postToServer().execute("http://35.198.237.116/coffeshop/api/Khachhangs");
+
         }
     }
-    class getURL extends AsyncTask<String,Void,String>
+    class postToServer extends AsyncTask<String,Void,String>
     {
-        OkHttpClient client=new OkHttpClient.Builder().connectTimeout(15, TimeUnit.SECONDS)
-                .writeTimeout(15,TimeUnit.SECONDS)
-                .readTimeout(15,TimeUnit.SECONDS)
-                .retryOnConnectionFailure(true)
-                .build();
+        OkHttpClient client=new OkHttpClient.Builder().build();
+
         @Override
         protected String doInBackground(String... strings) {
-            Request.Builder builder = new Request.Builder();
-            builder.url(strings[0]);
-            Request request=builder.build();
+            OkHttpClient client = new OkHttpClient().newBuilder()
+                    .build();
+
+            MediaType mediaType = MediaType.parse("application/json");
+            Log.d("AAA","Tạo thanh công");
+            //RequestBody body = RequestBody.create(mediaType, "{\r\n\t\t\t\"idkhachhang\": "+ idkh+",\r\n            \"tongtienbandau\": "+ tongtien+",\r\n            \"tongtienthanhtoan\": "+tongtien+",\r\n            \"idcuahang\": \""+idcuahang+"\"\r\n}");
+            //RequestBody body = RequestBody.create(mediaType, "{\r\n\t\t\t\"idkhachhang\": "++",\r\n            \"tongtienbandau\": "+tongtien+",\r\n            \"tongtienthanhtoan\": "+tongtien+",\r\n            \"idcuahang\": "+idcuahang+"\r\n}");
+            RequestBody body = RequestBody.create(mediaType, "{\r\n        \r\n        \"email\": \"b@gmail.com\",\r\n        \"facebook\": \"https://www.facebook.com/b.98\",\r\n        \"idloaikhachhang\": 1,\r\n        \"sodienthoai\": \""+phonenumber+"\",\r\n        \"tenkhachhang\": \"b\"\r\n    },");
+            Request request = new Request.Builder()
+                    .url("http://172.20.10.5:8080/api/dathang")
+                    .method("POST", body)
+                    .build();
+
             try {
-                Response response= client.newCall(request).execute();
-                return response.body().string();
+                Response response = client.newCall(request).execute();
+
+                return  response.body().string();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             return null;
         }
-
         @Override
         protected void onPostExecute(String s) {
             if(!s.equals(""))
             {
-
+                Intent intent = new Intent(Register.this,MainActivity.class);
+                startActivity(intent);
             }
-
             super.onPostExecute(s);
         }
+
     }
 
 }

@@ -20,17 +20,17 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="404dp"
-        android:layout_height="117dp"
-        android:layout_marginTop="0dp"
+        android:layout_width="409dp"
+        android:layout_height="115dp"
         android:scaleType="fitXY"
-
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text_tools"
-        app:srcCompat="@drawable/background_tk"
+        app:srcCompat="@drawable/backgroup_coffeshop"
         tools:ignore="MissingConstraints" />
+
 
 
     <TextView
@@ -128,7 +128,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/anhdep"
+            android:src="@drawable/logo2"
             android:scaleType="centerCrop"></ImageView>
 
 

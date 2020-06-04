@@ -23,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -54,9 +55,86 @@ public class SlideshowFragment extends Fragment {
         arrhoadon = new ArrayList<hoadon>();
         adapter = new hoadonAdapter(getActivity(),R.layout.dong_hoa_don,arrhoadon);
         lvhoadon.setAdapter(adapter);
-        hoadon h1=new hoadon(1,1,1,100000,10000,new Date(2019,1,1),"Hoàng quốc việt");
-        arrhoadon.add(h1);
-        adapter.notifyDataSetChanged();
+        //hoadon h1=new hoadon(1,1,1,100000,10000,new Date(2019,1,1),"Hoàng quốc việt");
+        //arrhoadon.add(h1);
+        new getURL().execute("http://35.198.237.116/api/lichsumuahang/13");
+        String s= "[\n" +
+                "    {\n" +
+                "        \"mahoadon\": 29,\n" +
+                "        \"tencuahang\": \"Café Mộc\",\n" +
+                "        \"diachi\": \"234, Hoàng Quốc Việt, Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội\",\n" +
+                "        \"tongtien\": 11.0,\n" +
+                "        \"ngaymua\": \"2020-06-03T23:52:47.000+00:00\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"mahoadon\": 30,\n" +
+                "        \"tencuahang\": \"Café Mộc\",\n" +
+                "        \"diachi\": \"234, Hoàng Quốc Việt, Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội\",\n" +
+                "        \"tongtien\": 11.0,\n" +
+                "        \"ngaymua\": \"2020-06-03T23:53:41.000+00:00\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"mahoadon\": 31,\n" +
+                "        \"tencuahang\": \"Café Mộc\",\n" +
+                "        \"diachi\": \"234, Hoàng Quốc Việt, Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội\",\n" +
+                "        \"tongtien\": 11.0,\n" +
+                "        \"ngaymua\": \"2020-06-03T23:55:28.000+00:00\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"mahoadon\": 32,\n" +
+                "        \"tencuahang\": \"Café Mộc\",\n" +
+                "        \"diachi\": \"234, Hoàng Quốc Việt, Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội\",\n" +
+                "        \"tongtien\": 11.0,\n" +
+                "        \"ngaymua\": \"2020-06-03T23:57:45.000+00:00\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"mahoadon\": 33,\n" +
+                "        \"tencuahang\": \"Café Mộc\",\n" +
+                "        \"diachi\": \"234, Hoàng Quốc Việt, Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội\",\n" +
+                "        \"tongtien\": 11.0,\n" +
+                "        \"ngaymua\": \"2020-06-04T00:01:00.000+00:00\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"mahoadon\": 34,\n" +
+                "        \"tencuahang\": \"Café Mộc\",\n" +
+                "        \"diachi\": \"234, Hoàng Quốc Việt, Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội\",\n" +
+                "        \"tongtien\": 11.0,\n" +
+                "        \"ngaymua\": \"2020-06-04T00:02:29.000+00:00\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"mahoadon\": 35,\n" +
+                "        \"tencuahang\": \"Café Mộc\",\n" +
+                "        \"diachi\": \"234, Hoàng Quốc Việt, Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội\",\n" +
+                "        \"tongtien\": 11.0,\n" +
+                "        \"ngaymua\": \"2020-06-04T00:02:57.000+00:00\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"mahoadon\": 36,\n" +
+                "        \"tencuahang\": \"Café Mộc\",\n" +
+                "        \"diachi\": \"234, Hoàng Quốc Việt, Cổ Nhuế 1, Bắc Từ Liêm, Hà Nội\",\n" +
+                "        \"tongtien\": 50000.0,\n" +
+                "        \"ngaymua\": \"2020-06-04T00:05:24.000+00:00\"\n" +
+                "    }\n" +
+                "]";
+        JSONArray jsonArray;
+        try {
+            jsonArray = new JSONArray(s);
+            for(int i=0;i<jsonArray.length();i++)
+            {
+                hoadon hd=new hoadon();
+                JSONObject object=jsonArray.getJSONObject(i);
+                hd.setId(object.getInt("mahoadon"));
+                hd.setDiachi(object.getString("diachi"));
+                hd.setSotiennhan(object.getDouble("tongtien"));
+                hd.setSotientralai(0);
+                hd.setNgaymua(object.getString("ngaymua"));
+                arrhoadon.add(hd);
+            }
+            adapter.notifyDataSetChanged();
+        } catch (JSONException | ParseException e) {
+            e.printStackTrace();
+        }
+
 
         return root;
     }
@@ -92,12 +170,15 @@ public class SlideshowFragment extends Fragment {
                     {
                         hoadon hd=new hoadon();
                         JSONObject object=jsonArray.getJSONObject(i);
-                        hd.setId(object.getInt("idhoadon"));
-
-
+                        hd.setId(object.getInt("mahoadon"));
+                        hd.setDiachi(object.getString("diachi"));
+                        hd.setSotiennhan(object.getDouble("tongtien"));
+                        hd.setSotientralai(0);
+                        hd.setNgaymua(object.getString("ngaymua"));
+                        arrhoadon.add(hd);
                     }
                     adapter.notifyDataSetChanged();
-                } catch (JSONException e) {
+                } catch (JSONException | ParseException e) {
                     e.printStackTrace();
                 }
 

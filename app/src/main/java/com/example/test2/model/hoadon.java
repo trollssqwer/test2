@@ -1,13 +1,15 @@
 package com.example.test2.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class hoadon {
     private long id;
     private long idkhachhang;
     private long idnhanvien;
-    private float sotiennhan;
-    private float sotientralai;
+    private double sotiennhan;
+    private double sotientralai;
     private Date ngaymua;
     private String diachi;
 
@@ -57,19 +59,19 @@ public class hoadon {
         this.idnhanvien = idnhanvien;
     }
 
-    public float getSotiennhan() {
+    public double getSotiennhan() {
         return sotiennhan;
     }
 
-    public void setSotiennhan(float sotiennhan) {
+    public void setSotiennhan(double sotiennhan) {
         this.sotiennhan = sotiennhan;
     }
 
-    public float getSotientralai() {
+    public double getSotientralai() {
         return sotientralai;
     }
 
-    public void setSotientralai(float sotientralai) {
+    public void setSotientralai(double sotientralai) {
         this.sotientralai = sotientralai;
     }
 
@@ -77,8 +79,10 @@ public class hoadon {
         return ngaymua;
     }
 
-    public void setNgaymua(Date ngaymua) {
-        this.ngaymua = ngaymua;
+    public void setNgaymua(String ngaymua) throws ParseException {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        Date d=formatter.parse(ngaymua);
+        this.ngaymua = d;
     }
 
 }
