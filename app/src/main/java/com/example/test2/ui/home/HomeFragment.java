@@ -82,45 +82,56 @@ public class HomeFragment extends Fragment {
                 startActivity(intentADD);
             }
         });
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://coffeemakingworld.com/wp-content/uploads/2018/11/Coffee-Americano.jpg");
-        listURL.add("https://u01.appmifile.com/images/2018/12/10/f951a8d0-7d03-484a-bf5b-b6ae57ba362a.png");
-        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT8Qq53y4ve_H1OhlMfBCGJN5Q0ip4EUdyfo6iU1FWIYsjXfYy8&usqp=CAU");
-        listURL.add("https://lh3.googleusercontent.com/proxy/dFF8kISkLXGn1MtSjsKBWFX6MOGFAfdEMZaImi7po4pgMy9SktLhtELTmBgYM-Ha31XuriMXc8Eb9gd6Il6VGb3I0jPXF5fQxATY85qwR8upfjAbKA");
-        listURL.add("https://coffee.axys.asia/image/cache/catalog/foods/22-700x700.jpg");
-        listURL.add("https://product.hstatic.net/1000308381/product/cafe_s_a_d__2e232cfd7ff748d6846bc6d62778ba6d_master.jpg");
-        listURL.add("https://media.istockphoto.com/photos/cappuccino-with-coffee-beans-picture-id523167980?k=6&m=523167980&s=612x612&w=0&h=M3haXBG2oinWVAFrIqKn4XcgTPWygjVAmFn-0GZEdFM");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
-        listURL.add("https://images.foody.vn/res/g78/776669/prof/s640x400/foody-upload-api-foody-mobile-cafe-dep-jpg-180912082336.jpg");
-        listURL.add("https://icdn.dantri.com.vn/D4RnKkvmf7KWMvllsvXmcccccccccc/Image/2014/11/7-e816f.jpg");
 
+
+        listURL.add("https://cdn.shopify.com/s/files/1/2177/5447/products/Fitz-Porsche-Ultimate-Series_1024x1024.jpg?v=1570630108");
+        listURL.add("https://images.squarespace-cdn.com/content/v1/5aa83bad9772ae97813540d0/1546342351907-4R2L1N4GITARI03VU9N0/ke17ZwdGBToddI8pDm48kJPo64LO3YZG-4f-ST8EfI9Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVGunbRojLjYM_qWg5xABZ5ZcuB4bj617U7w2cj588VrBRur-lC0WofN0YB1wFg-ZW0/cover_UC95Q8VU77.png");
+        listURL.add("https://media.istockphoto.com/vectors/modern-vector-abstract-love-book-cover-template-vector-id901801702");
+        listURL.add("https://cdn.shopify.com/s/files/1/1154/8424/products/moms-one-line.jpg?v=1554231550");
+        listURL.add("https://traderviet.com/attachments/art-and-science-of-technical-analysis-traderviet-jpg.6139/");
+        listURL.add("https://images-na.ssl-images-amazon.com/images/I/41NG6HZA8DL.jpg");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHr_rK6L67utG7NCr__J2HMjTwu80uCYw3gCL7Ced9RVKurnjh&usqp=CAU");
+        listURL.add("https://m.media-amazon.com/images/I/51ohXNfqFxL.jpg");
+        listURL.add("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442714697l/18106442._SY475_.jpg");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdf1qIEYOIZ4fa7sUDRTkechyjpCK33g-fDtwFHhDt-lN-oMpD&usqp=CAU");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlC5L6a0rYkQYcbrQsdz7e9aLucpRfeSaTy0oBKgVCtUXTL7kH&usqp=CAU");
+        listURL.add("https://cdn.shopify.com/s/files/1/2177/5447/products/Fitz-Porsche-Ultimate-Series_1024x1024.jpg?v=1570630108");
+        listURL.add("https://images.squarespace-cdn.com/content/v1/5aa83bad9772ae97813540d0/1546342351907-4R2L1N4GITARI03VU9N0/ke17ZwdGBToddI8pDm48kJPo64LO3YZG-4f-ST8EfI9Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVGunbRojLjYM_qWg5xABZ5ZcuB4bj617U7w2cj588VrBRur-lC0WofN0YB1wFg-ZW0/cover_UC95Q8VU77.png");
+        listURL.add("https://media.istockphoto.com/vectors/modern-vector-abstract-love-book-cover-template-vector-id901801702");
+        listURL.add("https://cdn.shopify.com/s/files/1/1154/8424/products/moms-one-line.jpg?v=1554231550");
+        listURL.add("https://traderviet.com/attachments/art-and-science-of-technical-analysis-traderviet-jpg.6139/");
+        listURL.add("https://images-na.ssl-images-amazon.com/images/I/41NG6HZA8DL.jpg");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHr_rK6L67utG7NCr__J2HMjTwu80uCYw3gCL7Ced9RVKurnjh&usqp=CAU");
+        listURL.add("https://m.media-amazon.com/images/I/51ohXNfqFxL.jpg");
+        listURL.add("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442714697l/18106442._SY475_.jpg");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdf1qIEYOIZ4fa7sUDRTkechyjpCK33g-fDtwFHhDt-lN-oMpD&usqp=CAU");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlC5L6a0rYkQYcbrQsdz7e9aLucpRfeSaTy0oBKgVCtUXTL7kH&usqp=CAU");
+        listURL.add("https://cdn.shopify.com/s/files/1/2177/5447/products/Fitz-Porsche-Ultimate-Series_1024x1024.jpg?v=1570630108");
+        listURL.add("https://images.squarespace-cdn.com/content/v1/5aa83bad9772ae97813540d0/1546342351907-4R2L1N4GITARI03VU9N0/ke17ZwdGBToddI8pDm48kJPo64LO3YZG-4f-ST8EfI9Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVGunbRojLjYM_qWg5xABZ5ZcuB4bj617U7w2cj588VrBRur-lC0WofN0YB1wFg-ZW0/cover_UC95Q8VU77.png");
+        listURL.add("https://media.istockphoto.com/vectors/modern-vector-abstract-love-book-cover-template-vector-id901801702");
+        listURL.add("https://cdn.shopify.com/s/files/1/1154/8424/products/moms-one-line.jpg?v=1554231550");
+        listURL.add("https://traderviet.com/attachments/art-and-science-of-technical-analysis-traderviet-jpg.6139/");
+        listURL.add("https://images-na.ssl-images-amazon.com/images/I/41NG6HZA8DL.jpg");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHr_rK6L67utG7NCr__J2HMjTwu80uCYw3gCL7Ced9RVKurnjh&usqp=CAU");
+        listURL.add("https://m.media-amazon.com/images/I/51ohXNfqFxL.jpg");
+        listURL.add("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442714697l/18106442._SY475_.jpg");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdf1qIEYOIZ4fa7sUDRTkechyjpCK33g-fDtwFHhDt-lN-oMpD&usqp=CAU");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlC5L6a0rYkQYcbrQsdz7e9aLucpRfeSaTy0oBKgVCtUXTL7kH&usqp=CAU");
+        listURL.add("https://cdn.shopify.com/s/files/1/2177/5447/products/Fitz-Porsche-Ultimate-Series_1024x1024.jpg?v=1570630108");
+        listURL.add("https://images.squarespace-cdn.com/content/v1/5aa83bad9772ae97813540d0/1546342351907-4R2L1N4GITARI03VU9N0/ke17ZwdGBToddI8pDm48kJPo64LO3YZG-4f-ST8EfI9Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVGunbRojLjYM_qWg5xABZ5ZcuB4bj617U7w2cj588VrBRur-lC0WofN0YB1wFg-ZW0/cover_UC95Q8VU77.png");
+        listURL.add("https://media.istockphoto.com/vectors/modern-vector-abstract-love-book-cover-template-vector-id901801702");
+        listURL.add("https://cdn.shopify.com/s/files/1/1154/8424/products/moms-one-line.jpg?v=1554231550");
+        listURL.add("https://traderviet.com/attachments/art-and-science-of-technical-analysis-traderviet-jpg.6139/");
+        listURL.add("https://images-na.ssl-images-amazon.com/images/I/41NG6HZA8DL.jpg");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTHr_rK6L67utG7NCr__J2HMjTwu80uCYw3gCL7Ced9RVKurnjh&usqp=CAU");
+        listURL.add("https://m.media-amazon.com/images/I/51ohXNfqFxL.jpg");
+        listURL.add("https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442714697l/18106442._SY475_.jpg");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdf1qIEYOIZ4fa7sUDRTkechyjpCK33g-fDtwFHhDt-lN-oMpD&usqp=CAU");
+        listURL.add("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlC5L6a0rYkQYcbrQsdz7e9aLucpRfeSaTy0oBKgVCtUXTL7kH&usqp=CAU");
         listmh=new ArrayList<>();
-        new getURL().execute("http://35.198.237.116/coffeshop/api/mathangs");
 
-//        listHang.add(new mathang(1,"a",3,"a"));
-//        listHang.add(new mathang(2,"b",4,"b"));
-//        listHang.add(new mathang(3,"c",5,"c"));
 
-        //txt2=(TextView) root.findViewById(R.id.textView2);
+        new getURL().execute("http://localhost:28976/api/users");
 
 
 
@@ -158,21 +169,20 @@ class getURL extends AsyncTask<String,Void,String>
             String json=  s;
             try {
                 JSONArray array=new JSONArray(s);
-                for(int i=0;i<array.length();i++)
-                {
-                    mathang mh=new mathang();
-                    JSONObject object=array.getJSONObject(i);
-                    mh.setId(object.getInt("idmathang"));
-                    mh.setDonvitinh(object.getString("donvitinh"));
-                    mh.setTenhang(object.getString("tenhang"));
-                    mh.setGia(object.getDouble("gia"));
-                    listHang.add(mh);
-
-                }
+//                for(int i=0;i<array.length();i++)
+//                {
+//                    mathang mh=new mathang();
+//                    JSONObject object=array.getJSONObject(i);
+//                    mh.setId(object.getInt("idmathang"));
+//                    mh.setDonvitinh(object.getString("donvitinh"));
+//                    mh.setTenhang(object.getString("tenhang"));
+//                    mh.setGia(object.getDouble("gia"));
+//                    listHang.add(mh);
+//
+//                }
 
 
                 recyclerView.setHasFixedSize(true);
-
                 layoutManager = new LinearLayoutManager(getActivity());
                 adapter = new ProductAdapter(listHang);
                 recyclerView.setLayoutManager(layoutManager);

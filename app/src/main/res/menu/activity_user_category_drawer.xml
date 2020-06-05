@@ -11,11 +11,11 @@
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Giỏ hàng" />
+            android:title="Giỏ sách" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Lịch sử mua hàng" />
+            android:title="Lịch sử đặt sách" />
         <item
             android:id="@+id/nav_tools"
             android:icon="@drawable/ic_menu_manage"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/main3"
     tools:context=".MainActivity">
 
     <ImageView
@@ -15,8 +15,8 @@
         android:layout_marginLeft="65dp"
         android:layout_marginRight="60dp"
         android:background="?attr/listChoiceBackgroundIndicator"
-        android:src="@drawable/logo2"
-        app:srcCompat="@drawable/logo2" />
+        android:src="@drawable/logo5"
+        app:srcCompat="@drawable/logo5" />
 
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="273dp"
         android:layout_marginEnd="48dp"
-        android:text="Poring in your capuchino"
+        android:text="Premium Library"
         android:textAlignment="center"
         android:textColor="@android:color/white"
 

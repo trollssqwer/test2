@@ -28,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text_tools"
-        app:srcCompat="@drawable/backgroup_coffeshop"
+        app:srcCompat="@drawable/bg4"
         tools:ignore="MissingConstraints" />
 
 
@@ -52,7 +52,7 @@
         android:layout_marginEnd="4dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Tran Nguyen Quang Thong"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
         android:layout_marginTop="76dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="trollssqwer@gmail.com"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toEndOf="@+id/textView6"
@@ -78,7 +78,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="083493933"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toEndOf="@+id/textView6"
@@ -128,7 +128,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/logo2"
+            android:src="@drawable/anhdep"
             android:scaleType="centerCrop"></ImageView>
 
 

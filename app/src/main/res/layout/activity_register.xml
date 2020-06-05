@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bg6"
     tools:context=".Register">
 
     <ImageView
         android:id="@+id/register_app_logo"
         android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_height="200dp"
         android:layout_marginTop="100dp"
         android:layout_marginLeft="65dp"
         android:layout_marginRight="65dp"
 
-        android:background="@drawable/logo2" />
+        android:background="@drawable/logo5" />
 
     <EditText
         android:id="@+id/register_username"

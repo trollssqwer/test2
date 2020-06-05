@@ -89,7 +89,11 @@ public class GalleryFragment extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getContext(),"Thanh toan thanh cong!",Toast.LENGTH_LONG).show();
-                    new postToServer().execute("http://35.198.237.116/api/dathang");
+                        new postToServer().execute("http://35.198.237.116/api/dathang");
+                        listCart.clear();
+                        Intent intent = new Intent(getActivity(), UserCategory.class);
+                        startActivity(intent);
+
 
                     }
                 });
@@ -131,7 +135,7 @@ public class GalleryFragment extends Fragment {
             OkHttpClient client = new OkHttpClient().newBuilder()
                     .build();
 
-            MediaType mediaType = MediaType.parse("application/json");
+            MediaType mediaType = MediaType.parse("application/json  ");
             Log.d("AAA","Tạo thanh công");
             //RequestBody body = RequestBody.create(mediaType, "{\r\n\t\t\t\"idkhachhang\": "+ idkh+",\r\n            \"tongtienbandau\": "+ tongtien+",\r\n            \"tongtienthanhtoan\": "+tongtien+",\r\n            \"idcuahang\": \""+idcuahang+"\"\r\n}");
             //RequestBody body = RequestBody.create(mediaType, "{\r\n\t\t\t\"idkhachhang\": "+"13"+",\r\n            \"tongtienbandau\": "+tongtien+",\r\n            \"tongtienthanhtoan\": "+tongtien+",\r\n            \"idcuahang\": "+idcuahang+"\r\n}");
@@ -156,7 +160,7 @@ public class GalleryFragment extends Fragment {
             if(!s.equals(""))
             {
                 idhd=s;
-                new postCTToServer().execute("http://35.198.237.116/api/dathangchitiet");
+               // new pom stCTToServer().execute("http://35.198.237.116/api/dathangchitiet");
             }
             super.onPostExecute(s);
         }
@@ -203,9 +207,7 @@ public class GalleryFragment extends Fragment {
 
         @Override
         protected void onPostExecute(String s) {
-            listCart.clear();
-            Intent intent = new Intent(getActivity(), UserCategory.class);
-            startActivity(intent);
+
             super.onPostExecute(s);
         }
 }}

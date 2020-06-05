@@ -41,9 +41,6 @@ public class ShopList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_list);
-//        SlistHang.add(new cuahang(1,"a","a","a"));
-//        SlistHang.add(new cuahang(1,"a","a","a"));
-//        SlistHang.add(new cuahang(1,"a","a","a"));
         SrecyclerView =   findViewById(R.id.rv_shoplist);
         SlayoutManager = new LinearLayoutManager(this);
 

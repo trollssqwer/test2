@@ -157,7 +157,7 @@ public class Login extends AppCompatActivity {
                     }
                     if(kt==true)
                     {
-                        Intent intenta = new Intent(Login.this,ShopList.class);
+                        Intent intenta = new Intent(Login.this,UserCategory.class);
 
                         intenta.putExtra("idkhachhang1",listkh.get(icur).getIdkhachhang());
                         intenta.putExtra("tenkhachhang1",listkh.get(icur).getTenkhachhang());

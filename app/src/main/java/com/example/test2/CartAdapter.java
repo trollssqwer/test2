@@ -17,6 +17,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import com.example.test2.model.cart;
 
+import static com.example.test2.InformationProduct.listCart;
 import static com.example.test2.ui.home.HomeFragment.listURL;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
@@ -70,9 +71,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
         cart currentProdcut = listHang.get(position);
-
         //holder.imgProduct.setImageResource(R.drawable.ic_launcher_background);
-        new DownLoadImageTask(holder.imgProduct).execute(listURL.get(position).toString());
+        new DownLoadImageTask(holder.imgProduct).execute(listCart.get(position).getAnhHang().toString());
         holder.priceProduct.setText(String.valueOf(currentProdcut.getGiaHang()));
         holder.nameProduct.setText(currentProdcut.getTenHang());
         holder.desProduct.setText(String.valueOf(currentProdcut.getSoluong()));

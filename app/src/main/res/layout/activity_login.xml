@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
+    android:background="@drawable/bg7"
     tools:context=".Login">
 
     <ImageView
@@ -15,7 +15,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginRight="65dp"
 
-        android:background="@drawable/logo2" />
+        android:background="@drawable/logo5" />
 
     <EditText
         android:id="@+id/login_username_input"

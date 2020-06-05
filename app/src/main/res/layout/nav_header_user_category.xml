@@ -22,13 +22,13 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:src="@drawable/logo2"
         app:srcCompat="@mipmap/ic_launcher"
-        tools:srcCompat="@drawable/logo2" />
+        tools:srcCompat="@drawable/avatar" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Toàn"
+        android:text="Thong98"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/white"
         android:textSize="20dp"
@@ -39,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
+        android:text="Tran Nguyen Quang Thong"
         android:textSize="20dp"
         android:textStyle="bold" />
 
