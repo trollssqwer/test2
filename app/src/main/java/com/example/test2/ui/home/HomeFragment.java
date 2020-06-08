@@ -110,7 +110,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        //new getURL().execute("http://192.168.85.1:28976/api/users");
+        new getURL().execute("http://192.168.85.1:28976/api/users");
 
 
         return root;
