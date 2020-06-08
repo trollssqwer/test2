@@ -36,6 +36,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import static com.example.test2.ui.home.HomeFragment.listHang;
+
 public class UserCategory extends AppCompatActivity {
     private TextView ProductNamex , ProductPrice ,ProductDescrption;
     private ImageView ProductImage;
@@ -61,6 +63,7 @@ public class UserCategory extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         //new getURL().execute("http://35.198.237.116/coffeshop/api/mathangs");
+
 
 
 

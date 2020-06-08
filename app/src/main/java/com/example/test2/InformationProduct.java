@@ -34,6 +34,7 @@ public class InformationProduct extends AppCompatActivity {
     String tenHang;
     Double giaHang;
     String anhHang;
+    String desHang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class InformationProduct extends AppCompatActivity {
         tenHang = intentADD.getStringExtra("tenHang");
         giaHang = intentADD.getDoubleExtra("giaHang",0);
         anhHang = intentADD.getStringExtra("imgHang");
+        desHang = intentADD.getStringExtra("desHang");
         productImg = findViewById(R.id.product_image_details);
         productname = findViewById(R.id.product_name_details);
         productid = findViewById(R.id.product_description_details);
@@ -50,6 +52,7 @@ public class InformationProduct extends AppCompatActivity {
         productname.setText(tenHang);
         //productid.setText(String.valueOf(idHang));
         productprice.setText(String.valueOf(giaHang));
+        productid.setText(desHang);
         btnCount = (ElegantNumberButton) findViewById(R.id.number_btn);
 
         mTextView = (TextView) findViewById(R.id.text);
