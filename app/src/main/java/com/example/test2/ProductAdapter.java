@@ -77,10 +77,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         mathang currentProdcut = listHang.get(position);
 //
         new DownLoadImageTask(holder.imgProduct).execute(listURL.get(position).toString());
-        //holder.imgProduct.setImageResource(R.drawable.mh1);
         holder.priceProduct.setText(String.valueOf(currentProdcut.getGia()));
         holder.nameProduct.setText(currentProdcut.getTenhang());
-        holder.desProduct.setText(currentProdcut.getTenhang());
+        holder.desProduct.setText(currentProdcut.getDonvitinh());
     }
 
     @Override
